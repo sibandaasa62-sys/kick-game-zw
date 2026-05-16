@@ -6,7 +6,6 @@
 <title>Kickgame Shop</title>
 
 <style>
-
 *{
   margin:0;
   padding:0;
@@ -27,13 +26,11 @@ body::before{
   left:0;
   width:100%;
   height:100%;
-  background:
-  radial-gradient(circle at top,#111827,#070a0f 60%,#05070a);
+  background:radial-gradient(circle at top,#111827,#070a0f 60%,#05070a);
   z-index:-1;
 }
 
 /* NAV */
-
 nav{
   display:flex;
   justify-content:space-between;
@@ -44,38 +41,22 @@ nav{
   border-bottom:1px solid #1b2633;
 }
 
-.logo{
-  height:40px;
-}
+.logo{ height:40px; }
 
 nav a{
   color:#cfd6dd;
   text-decoration:none;
   margin-left:25px;
-  transition:0.3s;
 }
 
-nav a:hover{
-  color:#8fb4d9;
-}
+nav a:hover{ color:#8fb4d9; }
 
 /* TITLE */
-
-.title{
-  padding:50px;
-}
-
-.title h1{
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.title p{
-  color:#8c98a5;
-}
+.title{ padding:50px; }
+.title h1{ font-size:42px; }
+.title p{ color:#8c98a5; }
 
 /* GRID */
-
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(240px,240px));
@@ -85,18 +66,11 @@ nav a:hover{
 }
 
 /* CARD */
-
 .card{
   background:#111821;
-  border:1px solid #1f2c3a;
   border-radius:18px;
   overflow:hidden;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  border-color:#35506b;
+  border:1px solid #1f2c3a;
 }
 
 .card img{
@@ -107,638 +81,308 @@ nav a:hover{
   padding:12px;
 }
 
-.info{
-  padding:16px;
-}
+.info{ padding:16px; }
 
-.info h3{
-  margin-bottom:8px;
-}
-
-.price{
-  color:#8fb4d9;
-  margin-bottom:14px;
-}
-
-/* SIZE */
+.price{ color:#8fb4d9; margin-bottom:10px; }
 
 .size-select{
   width:100%;
   padding:10px;
   margin-bottom:10px;
-  border:none;
-  border-radius:10px;
   background:#0f141b;
   color:white;
-  outline:none;
+  border:none;
+  border-radius:10px;
 }
 
-/* QUANTITY */
-
-.qty-row{
-  display:flex;
-  gap:10px;
-  margin-bottom:10px;
-}
+/* INPUT */
+.qty-row{ display:flex; gap:10px; }
 
 .quantity-input{
   width:75px;
   padding:10px;
+  background:#0f141b;
   border:none;
   border-radius:10px;
-  background:#0f141b;
   color:white;
   text-align:center;
-  outline:none;
 }
 
 /* BUTTONS */
-
 .add-btn{
   flex:1;
   border:none;
   border-radius:10px;
   background:#8fb4d9;
-  color:#081018;
-  font-weight:bold;
   cursor:pointer;
-  transition:0.3s;
-}
-
-.add-btn:hover{
-  transform:scale(1.03);
 }
 
 .remove-btn{
   width:100%;
+  margin-top:10px;
   padding:10px;
   border:none;
   border-radius:10px;
   background:#1d2835;
   color:white;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.remove-btn:hover{
-  background:#29384a;
 }
 
 /* CART */
-
 .cart{
   position:fixed;
   bottom:20px;
   right:20px;
   width:320px;
   background:#111821;
-  border:1px solid #223042;
   border-radius:18px;
   padding:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
-.cart h3{
-  margin-bottom:12px;
 }
 
 .cart-items{
   max-height:180px;
   overflow:auto;
   margin-bottom:15px;
-  color:#d1d9e0;
-  font-size:14px;
 }
 
-.cart-item{
-  margin-bottom:10px;
-  padding-bottom:10px;
-  border-bottom:1px solid #1d2835;
-}
-
-.total{
-  margin-bottom:15px;
-  color:#8fb4d9;
-  font-weight:bold;
-}
-
-/* CHECKOUT */
+.total{ color:#8fb4d9; margin-bottom:15px; }
 
 .checkout-btn{
   width:100%;
   padding:12px;
+  background:#25D366;
   border:none;
   border-radius:12px;
-  background:#25D366;
   color:white;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
 }
 
-.checkout-btn:hover{
-  transform:scale(1.03);
-}
-
-/* MODAL */
-
+/* CHECKOUT */
 .overlay{
   display:none;
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   background:rgba(0,0,0,0.75);
   justify-content:center;
   align-items:center;
-  z-index:9999;
 }
 
 .checkout-box{
   width:90%;
   max-width:430px;
   background:#111821;
-  border:1px solid #223042;
-  border-radius:20px;
   padding:25px;
-}
-
-.checkout-box h2{
-  margin-bottom:15px;
+  border-radius:20px;
 }
 
 .checkout-box input{
   width:100%;
   padding:12px;
   margin-bottom:12px;
-  border:none;
-  border-radius:10px;
   background:#0f141b;
+  border:none;
   color:white;
-  outline:none;
-}
-
-.summary{
-  max-height:160px;
-  overflow:auto;
-  margin-bottom:15px;
-  color:#d1d9e0;
-  font-size:14px;
-}
-
-.summary-item{
-  margin-bottom:10px;
-  padding-bottom:10px;
-  border-bottom:1px solid #1d2835;
-}
-
-.final-total{
-  color:#8fb4d9;
-  font-weight:bold;
-  margin-bottom:15px;
+  border-radius:10px;
 }
 
 .place-btn{
   width:100%;
   padding:12px;
+  background:#25D366;
   border:none;
   border-radius:12px;
-  background:#25D366;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-  margin-bottom:10px;
 }
 
 .close-btn{
   width:100%;
   padding:12px;
+  background:#1c2733;
   border:none;
   border-radius:12px;
-  background:#1c2733;
-  color:white;
-  cursor:pointer;
+  margin-top:10px;
 }
-
 </style>
 </head>
 
 <body>
 
 <nav>
-
-<img src="logo.png" class="logo">
-
+<img src="/logo.png" class="logo">
 <div>
 <a href="index.html">Home</a>
 <a href="#">Shop</a>
-<a href="#">Drops</a>
-<a href="#">Contact</a>
 </div>
-
 </nav>
 
 <section class="title">
-
 <h1>Shop Collection</h1>
 <p>Curated sneakers & everyday essentials.</p>
-
 </section>
 
 <div class="grid" id="grid"></div>
 
+<!-- CART -->
 <div class="cart">
-
 <h3>Cart</h3>
-
-<div class="cart-items" id="cart-items">
-Cart is empty
+<div class="cart-items" id="cart-items">Cart is empty</div>
+<div class="total">Total: $<span id="total">0</span></div>
+<button class="checkout-btn" onclick="openCheckout()">Checkout</button>
 </div>
 
-<div class="total">
-Total: $<span id="total">0</span>
-</div>
-
-<button class="checkout-btn" onclick="openCheckout()">
-Checkout
-</button>
-
-</div>
-
+<!-- CHECKOUT -->
 <div class="overlay" id="checkout-overlay">
-
 <div class="checkout-box">
 
 <h2>Checkout</h2>
 
-<input type="text" id="customer-name" placeholder="Full Name">
+<input id="customer-name" placeholder="Full Name">
+<input id="customer-phone" placeholder="Phone Number">
+<input id="customer-address" placeholder="Address to be delivered">
 
-<input type="text" id="customer-phone" placeholder="Phone Number">
-
-<input type="text" id="customer-address" placeholder="Address to be delivered">
-
-<div class="summary" id="checkout-summary"></div>
-
-<div class="final-total">
-Total: $<span id="checkout-total">0</span>
-</div>
-
-<button class="place-btn" onclick="placeOrder()">
-Place Order
-</button>
-
-<button class="close-btn" onclick="closeCheckout()">
-Cancel
-</button>
+<button class="place-btn" onclick="placeOrder()">Place Order</button>
+<button class="close-btn" onclick="closeCheckout()">Cancel</button>
 
 </div>
-
 </div>
 
 <script>
 
 const products = [
-
-{
-name:"New Balance 9060",
-price:25,
-image:"images/nb9060.jpg"
-},
-
-{
-name:"Adidas Samba",
-price:20,
-image:"images/samba.jpg"
-},
-
-{
-name:"Puma Suede",
-price:25,
-image:"images/puma_suede.jpg"
-},
-
-{
-name:"New Balance 530",
-price:20,
-image:"images/nb530.jpg"
-},
-
-{
-name:"Nike TN",
-price:30,
-image:"images/tn.jpg"
-},
-
-{
-name:"Asics",
-price:60,
-image:"images/asics.jpg"
-},
-
-{
-name:"Nike Mind 001",
-price:60,
-image:"images/nike_mind_001.jpg"
-}
-
+{name:"New Balance 9060",price:25,image:"/images/nb9060.jpg"},
+{name:"Adidas Samba",price:20,image:"/images/samba.jpg"},
+{name:"Puma Suede",price:25,image:"/images/puma_suede.jpg"},
+{name:"New Balance 530",price:20,image:"/images/nb530.jpg"},
+{name:"Nike TN",price:30,image:"/images/tn.jpg"},
+{name:"Asics",price:60,image:"/images/asics.jpg"},
+{name:"Nike Mind 001",price:60,image:"/images/nike_mind_001.jpg"}
 ];
 
 let cart = {};
 
 const grid = document.getElementById("grid");
 
-products.forEach(product=>{
-
+products.forEach(p=>{
 grid.innerHTML += `
-
 <div class="card">
-
-<img src="${product.image}">
-
+<img src="${p.image}">
 <div class="info">
 
-<h3>${product.name}</h3>
+<h3>${p.name}</h3>
+<p class="price">$${p.price}</p>
 
-<p class="price">$${product.price}</p>
-
-<select class="size-select" id="size-${product.name}">
-
+<select id="size-${p.name}" class="size-select">
 <option value="">Select Size</option>
-
-<option value="UK 3">UK 3</option>
-<option value="UK 4">UK 4</option>
-<option value="UK 5">UK 5</option>
-<option value="UK 6">UK 6</option>
-<option value="UK 7">UK 7</option>
-<option value="UK 8">UK 8</option>
-<option value="UK 9">UK 9</option>
-<option value="UK 10">UK 10</option>
-
+<option>UK 3</option><option>UK 4</option><option>UK 5</option>
+<option>UK 6</option><option>UK 7</option><option>UK 8</option>
+<option>UK 9</option><option>UK 10</option>
 </select>
 
 <div class="qty-row">
-
-<input
-type="number"
-class="quantity-input"
-id="qty-${product.name}"
-min="1"
-value="1"
->
-
-<button
-class="add-btn"
-onclick="addToCart('${product.name}',${product.price})"
->
-Add
-</button>
-
+<input type="number" id="qty-${p.name}" value="1" class="quantity-input">
+<button class="add-btn" onclick="addToCart('${p.name}',${p.price})">Add</button>
 </div>
 
-<button
-class="remove-btn"
-onclick="removeFromCart('${product.name}')"
->
-Remove
-</button>
+<button class="remove-btn" onclick="removeFromCart('${p.name}')">Remove</button>
 
 </div>
-
 </div>
-
 `;
-
 });
-
-/* ADD */
 
 function addToCart(name,price){
 
-const size =
-document.getElementById("size-" + name).value;
+const size = document.getElementById("size-"+name).value;
+const qty = parseInt(document.getElementById("qty-"+name).value);
 
-const qty =
-parseInt(
-document.getElementById("qty-" + name).value
-);
+if(!size){ alert("Select size"); return; }
 
-if(size === ""){
-
-alert("Please select a size.");
-
-return;
-
-}
-
-const key = `${name} - ${size}`;
+const key = name+" - "+size;
 
 if(!cart[key]){
-
-cart[key] = {
-qty:0,
-price:price
-};
-
+cart[key]={qty:0,price};
 }
 
 cart[key].qty += qty;
 
 updateCart();
-
 }
-
-/* REMOVE */
 
 function removeFromCart(name){
 
-for(let item in cart){
-
-if(item.startsWith(name + " - ")){
-
-cart[item].qty--;
-
-if(cart[item].qty <= 0){
-
-delete cart[item];
-
-}
-
+for(let k in cart){
+if(k.startsWith(name+" - ")){
+delete cart[k];
 break;
-
 }
-
 }
 
 updateCart();
-
 }
-
-/* UPDATE CART */
 
 function updateCart(){
 
-const cartItems =
-document.getElementById("cart-items");
+let total=0;
+const box=document.getElementById("cart-items");
+box.innerHTML="";
 
-cartItems.innerHTML = "";
+for(let k in cart){
 
-let total = 0;
+let sub = cart[k].qty * cart[k].price;
+total += sub;
 
-for(let item in cart){
-
-const subtotal =
-cart[item].qty * cart[item].price;
-
-total += subtotal;
-
-cartItems.innerHTML += `
-
-<div class="cart-item">
-
-${item}<br>
-
-Qty: ${cart[item].qty}<br>
-
-$${subtotal}
-
+box.innerHTML += `
+<div>
+${k}<br>
+Qty: ${cart[k].qty}<br>
+$${sub}
 </div>
-
+<hr>
 `;
-
 }
 
-if(Object.keys(cart).length === 0){
+document.getElementById("total").innerText=total;
 
-cartItems.innerHTML =
-"Cart is empty";
-
+if(!Object.keys(cart).length){
+box.innerHTML="Cart is empty";
 }
-
-document.getElementById("total").innerText =
-total;
-
 }
-
-/* OPEN CHECKOUT */
 
 function openCheckout(){
-
-if(Object.keys(cart).length === 0){
-
-alert("Cart is empty.");
-
-return;
-
+document.getElementById("checkout-overlay").style.display="flex";
 }
-
-const summary =
-document.getElementById("checkout-summary");
-
-summary.innerHTML = "";
-
-let total = 0;
-
-for(let item in cart){
-
-const subtotal =
-cart[item].qty * cart[item].price;
-
-total += subtotal;
-
-summary.innerHTML += `
-
-<div class="summary-item">
-
-${item}<br>
-
-Qty: ${cart[item].qty}<br>
-
-$${subtotal}
-
-</div>
-
-`;
-
-}
-
-document.getElementById("checkout-total").innerText =
-total;
-
-document.getElementById("checkout-overlay").style.display =
-"flex";
-
-}
-
-/* CLOSE */
 
 function closeCheckout(){
-
-document.getElementById("checkout-overlay").style.display =
-"none";
-
+document.getElementById("checkout-overlay").style.display="none";
 }
-
-/* PLACE ORDER */
 
 function placeOrder(){
 
-const name =
-document.getElementById("customer-name").value;
+let name=document.getElementById("customer-name").value;
+let phone=document.getElementById("customer-phone").value;
+let address=document.getElementById("customer-address").value;
 
-const phone =
-document.getElementById("customer-phone").value;
-
-const address =
-document.getElementById("customer-address").value;
-
-if(!name || !phone || !address){
-
-alert("Please fill all fields.");
-
+if(!name||!phone||!address){
+alert("Fill all fields");
 return;
-
 }
 
-let message =
-`Hie! I would like to place an order.
+let msg="Hie! I would like to place an order.\n\n";
 
-Name: ${name}
-Phone: ${phone}
-Address to be delivered: ${address}
+let total=0;
 
-Order:
-`;
-
-let total = 0;
-
-for(let item in cart){
-
-message +=
-`${item} x${cart[item].qty}\n`;
-
-total +=
-cart[item].qty * cart[item].price;
-
+for(let k in cart){
+msg+=`${k} x${cart[k].qty}\n`;
+total+=cart[k].qty*cart[k].price;
 }
 
-message += `\nTotal: $${total}`;
+msg+=`\nTotal: $${total}`;
 
 window.open(
-
-"https://wa.me/263788200595?text=" +
-encodeURIComponent(message),
-
+"https://wa.me/263788200595?text="+encodeURIComponent(msg),
 "_blank"
-
 );
 
-cart = {};
-
+cart={};
 updateCart();
-
 closeCheckout();
-
 }
 
 </script>
