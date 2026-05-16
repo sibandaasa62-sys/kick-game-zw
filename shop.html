@@ -31,8 +31,7 @@ body::before{
   z-index:-1;
 }
 
-/* NAVBAR */
-
+/* NAV */
 nav{
   display:flex;
   justify-content:space-between;
@@ -43,39 +42,21 @@ nav{
   border-bottom:1px solid #111;
 }
 
-.logo{
-  height:40px;
-}
+.logo{height:40px;}
 
 nav a{
   color:#cfd6dd;
   text-decoration:none;
   margin-left:25px;
   font-size:14px;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:#8fb4d9;
 }
 
 /* TITLE */
-
 .title{
   padding:50px 60px 20px;
 }
 
-.title h1{
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.title p{
-  color:#9aa7b3;
-}
-
 /* GRID */
-
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(240px,240px));
@@ -85,156 +66,104 @@ nav a:hover{
 }
 
 /* CARD */
-
 .card{
   background:#111821;
   border:1px solid #1a2430;
   border-radius:18px;
   overflow:hidden;
-  transition:0.3s;
 }
 
-.card:hover{
-  transform:translateY(-6px);
-  border-color:#31465f;
-}
-
-/* IMAGE */
-
+/* IMG */
 .card img{
   width:100%;
   height:190px;
   object-fit:contain;
   background:#0f141b;
   padding:12px;
-  transition:0.3s;
-}
-
-.card:hover img{
-  transform:scale(1.03);
 }
 
 /* INFO */
+.info{padding:16px;}
 
-.info{
-  padding:16px;
-}
-
-.info h3{
-  font-size:16px;
-  margin-bottom:8px;
-}
-
-.price{
-  color:#8fb4d9;
-  font-size:15px;
-  margin-bottom:15px;
-  transition:0.3s;
-}
+.price{color:#8fb4d9;}
 
 /* SIZE */
-
 .size-select{
   width:100%;
   padding:10px;
-  margin-bottom:15px;
+  margin:10px 0;
   background:#0f141b;
-  border:1px solid #223042;
-  border-radius:10px;
-  color:#d7e7f5;
-  outline:none;
+  color:white;
 }
 
-/* QUANTITY */
-
+/* QTY */
 .quantity-controls{
   display:flex;
   align-items:center;
   gap:10px;
 }
 
-.quantity-controls button{
-  width:45px;
-  height:45px;
-  font-size:18px;
-}
-
 .quantity{
   flex:1;
   text-align:center;
-  font-size:16px;
-  color:#d7e7f5;
 }
 
 /* BUTTON */
-
 button{
   background:transparent;
   border:1px solid #6f93b7;
   color:#d7e7f5;
   border-radius:10px;
   cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover{
-  background:#6f93b7;
-  color:#0b0f14;
+  padding:10px;
 }
 
 /* CART */
-
 .cart-bar{
   position:fixed;
   bottom:20px;
   right:20px;
   width:300px;
   background:#111821;
-  border:1px solid #223042;
   padding:18px;
   border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
-
-.cart-bar h4{
-  margin-bottom:10px;
-}
-
-.cart-items{
-  max-height:180px;
-  overflow:auto;
-  margin-bottom:15px;
-  font-size:14px;
-  color:#cfd6dd;
-}
-
-.cart-item{
-  margin-bottom:10px;
-  padding-bottom:10px;
-  border-bottom:1px solid #1b2633;
-}
-
-.cart-count{
-  color:#8fb4d9;
-  margin-bottom:15px;
-}
-
-/* WHATSAPP */
 
 .whatsapp-btn{
   width:100%;
   padding:12px;
   background:#25D366;
-  border:none;
   color:white;
-  font-weight:bold;
-  border-radius:12px;
-  cursor:pointer;
-  transition:0.3s;
+  border:none;
+  margin-top:10px;
 }
 
-.whatsapp-btn:hover{
-  transform:scale(1.03);
+/* CHECKOUT MODAL */
+#checkoutModal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.checkout-box{
+  background:#111821;
+  padding:20px;
+  border-radius:15px;
+  width:90%;
+  max-width:400px;
+}
+
+.checkout-box input{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
 }
 
 </style>
@@ -242,427 +171,175 @@ button:hover{
 
 <body>
 
-<!-- NAV -->
-
 <nav>
-
   <img src="logo.png" class="logo">
-
   <div>
-    <a href="index.html">Home</a>
+    <a href="#">Home</a>
     <a href="#">Shop</a>
-    <a href="#">Drops</a>
-    <a href="#">Contact</a>
   </div>
-
 </nav>
 
-<!-- TITLE -->
-
-<section class="title">
-
+<div class="title">
   <h1>Shop Collection</h1>
-  <p>Curated sneakers & everyday essentials.</p>
-
-</section>
-
-<!-- PRODUCTS -->
+</div>
 
 <div class="grid">
 
-<!-- PRODUCT TEMPLATE -->
+  <div class="card">
+    <img src="images/nb9060.jpg">
+    <div class="info">
+      <h3>New Balance 9060</h3>
+      <p class="price">$25</p>
 
-<div class="card">
-  <img src="images/nb9060.jpg">
+      <select id="size-New Balance 9060" class="size-select">
+        <option value="">Select Size</option>
+        <option>UK 6</option>
+        <option>UK 7</option>
+      </select>
 
-  <div class="info">
-
-    <h3>New Balance 9060</h3>
-    <p class="price">$25</p>
-
-    <select class="size-select" id="size-New Balance 9060">
-      <option value="">Select Size</option>
-      <option>UK 3</option>
-      <option>UK 4</option>
-      <option>UK 5</option>
-      <option>UK 6</option>
-      <option>UK 7</option>
-      <option>UK 8</option>
-      <option>UK 9</option>
-      <option>UK 10</option>
-    </select>
-
-    <div class="quantity-controls">
-      <button onclick="removeFromCart('New Balance 9060')">-</button>
-      <div class="quantity" id="qty-New Balance 9060">0</div>
-      <button onclick="addToCart('New Balance 9060')">+</button>
+      <div class="quantity-controls">
+        <button onclick="removeFromCart('New Balance 9060')">-</button>
+        <div class="quantity" id="qty-New Balance 9060">0</div>
+        <button onclick="addToCart('New Balance 9060')">+</button>
+      </div>
     </div>
-
   </div>
-</div>
-
-<div class="card">
-  <img src="images/samba.jpg">
-
-  <div class="info">
-
-    <h3>Adidas Samba</h3>
-    <p class="price">$20</p>
-
-    <select class="size-select" id="size-Adidas Samba">
-      <option value="">Select Size</option>
-      <option>UK 3</option>
-      <option>UK 4</option>
-      <option>UK 5</option>
-      <option>UK 6</option>
-      <option>UK 7</option>
-      <option>UK 8</option>
-      <option>UK 9</option>
-      <option>UK 10</option>
-    </select>
-
-    <div class="quantity-controls">
-      <button onclick="removeFromCart('Adidas Samba')">-</button>
-      <div class="quantity" id="qty-Adidas Samba">0</div>
-      <button onclick="addToCart('Adidas Samba')">+</button>
-    </div>
-
-  </div>
-</div>
-
-<div class="card">
-  <img src="images/puma_suede.jpg">
-
-  <div class="info">
-
-    <h3>Puma Suede</h3>
-    <p class="price">$25</p>
-
-    <select class="size-select" id="size-Puma Suede">
-      <option value="">Select Size</option>
-      <option>UK 3</option>
-      <option>UK 4</option>
-      <option>UK 5</option>
-      <option>UK 6</option>
-      <option>UK 7</option>
-      <option>UK 8</option>
-      <option>UK 9</option>
-      <option>UK 10</option>
-    </select>
-
-    <div class="quantity-controls">
-      <button onclick="removeFromCart('Puma Suede')">-</button>
-      <div class="quantity" id="qty-Puma Suede">0</div>
-      <button onclick="addToCart('Puma Suede')">+</button>
-    </div>
-
-  </div>
-</div>
-
-<div class="card">
-  <img src="images/nb530.jpg">
-
-  <div class="info">
-
-    <h3>New Balance 530</h3>
-
-    <p class="price" id="price-nb530">$20</p>
-
-    <select class="size-select" id="size-New Balance 530">
-      <option value="">Select Size</option>
-      <option>UK 3</option>
-      <option>UK 4</option>
-      <option>UK 5</option>
-      <option>UK 6</option>
-      <option>UK 7</option>
-      <option>UK 8</option>
-      <option>UK 9</option>
-      <option>UK 10</option>
-    </select>
-
-    <div class="quantity-controls">
-      <button onclick="removeFromCart('New Balance 530')">-</button>
-      <div class="quantity" id="qty-New Balance 530">0</div>
-      <button onclick="addToCart('New Balance 530')">+</button>
-    </div>
-
-  </div>
-</div>
-
-<div class="card">
-  <img src="images/tn.jpg">
-
-  <div class="info">
-
-    <h3>Nike TN</h3>
-    <p class="price">$30</p>
-
-    <select class="size-select" id="size-Nike TN">
-      <option value="">Select Size</option>
-      <option>UK 3</option>
-      <option>UK 4</option>
-      <option>UK 5</option>
-      <option>UK 6</option>
-      <option>UK 7</option>
-      <option>UK 8</option>
-      <option>UK 9</option>
-      <option>UK 10</option>
-    </select>
-
-    <div class="quantity-controls">
-      <button onclick="removeFromCart('Nike TN')">-</button>
-      <div class="quantity" id="qty-Nike TN">0</div>
-      <button onclick="addToCart('Nike TN')">+</button>
-    </div>
-
-  </div>
-</div>
-
-<div class="card">
-  <img src="images/asics.jpg">
-
-  <div class="info">
-
-    <h3>Asics</h3>
-    <p class="price">$60</p>
-
-    <select class="size-select" id="size-Asics">
-      <option value="">Select Size</option>
-      <option>UK 3</option>
-      <option>UK 4</option>
-      <option>UK 5</option>
-      <option>UK 6</option>
-      <option>UK 7</option>
-      <option>UK 8</option>
-      <option>UK 9</option>
-      <option>UK 10</option>
-    </select>
-
-    <div class="quantity-controls">
-      <button onclick="removeFromCart('Asics')">-</button>
-      <div class="quantity" id="qty-Asics">0</div>
-      <button onclick="addToCart('Asics')">+</button>
-    </div>
-
-  </div>
-</div>
-
-<div class="card">
-  <img src="images/nike_mind_001.jpg">
-
-  <div class="info">
-
-    <h3>Nike Mind 001</h3>
-    <p class="price">$60</p>
-
-    <select class="size-select" id="size-Nike Mind 001">
-      <option value="">Select Size</option>
-      <option>UK 3</option>
-      <option>UK 4</option>
-      <option>UK 5</option>
-      <option>UK 6</option>
-      <option>UK 7</option>
-      <option>UK 8</option>
-      <option>UK 9</option>
-      <option>UK 10</option>
-    </select>
-
-    <div class="quantity-controls">
-      <button onclick="removeFromCart('Nike Mind 001')">-</button>
-      <div class="quantity" id="qty-Nike Mind 001">0</div>
-      <button onclick="addToCart('Nike Mind 001')">+</button>
-    </div>
-
-  </div>
-</div>
 
 </div>
 
 <!-- CART -->
-
 <div class="cart-bar">
 
   <h4>Cart</h4>
+  <div id="cart-items">Cart is empty</div>
 
-  <div class="cart-items" id="cart-items">
-    Cart is empty
-  </div>
+  <p>Items: <span id="count">0</span></p>
 
-  <p class="cart-count">
-    Items: <span id="count">0</span>
-  </p>
-
-  <button class="whatsapp-btn" onclick="checkoutWhatsApp()">
-    Order on WhatsApp
+  <button class="whatsapp-btn" onclick="openCheckout()">
+    Checkout
   </button>
 
+</div>
+
+<!-- CHECKOUT -->
+<div id="checkoutModal">
+  <div class="checkout-box">
+
+    <h3>Checkout</h3>
+
+    <input id="custName" placeholder="Full Name">
+    <input id="custPhone" placeholder="Phone">
+    <input id="custAddress" placeholder="Address">
+
+    <div id="orderSummary"></div>
+
+    <button onclick="placeOrder()">Place Order</button>
+    <button onclick="closeCheckout()">Cancel</button>
+
+  </div>
 </div>
 
 <script>
 
 let cart = {};
 
-/* ADD */
-
 function addToCart(product){
 
-  const sizeSelect =
-    document.getElementById("size-" + product);
+  const size = document.getElementById("size-" + product).value;
 
-  const size = sizeSelect.value;
-
-  if(size === ""){
-    alert("Please select a size first.");
+  if(!size){
+    alert("Select size");
     return;
   }
 
   const key = product + " - " + size;
 
-  if(!cart[key]){
-    cart[key] = 1;
-  } else {
-    cart[key]++;
-  }
+  cart[key] = (cart[key] || 0) + 1;
 
   updateCart();
-
 }
-
-/* REMOVE */
-/* NOW REMOVES EVEN WITHOUT SELECTING SIZE */
 
 function removeFromCart(product){
 
-  let found = false;
-
   for(let item in cart){
-
     if(item.startsWith(product + " - ")){
-
       cart[item]--;
-
-      found = true;
-
-      if(cart[item] <= 0){
-        delete cart[item];
-      }
-
+      if(cart[item] <= 0) delete cart[item];
       break;
-
     }
-
   }
 
   updateCart();
-
 }
-
-/* UPDATE */
 
 function updateCart(){
 
   let total = 0;
-
-  const cartItems =
-    document.getElementById("cart-items");
-
-  cartItems.innerHTML = "";
-
-  /* RESET COUNTS */
-
-  document.querySelectorAll(".quantity")
-  .forEach(qty => {
-    qty.innerText = 0;
-  });
-
-  let nb530Total = 0;
+  let html = "";
 
   for(let item in cart){
-
     total += cart[item];
-
-    cartItems.innerHTML += `
-      <div class="cart-item">
-        ${item}<br>
-        Quantity: ${cart[item]}
-      </div>
-    `;
-
-    const product =
-      item.split(" - ")[0];
-
-    const qtyElement =
-      document.getElementById("qty-" + product);
-
-    if(qtyElement){
-
-      let current =
-        parseInt(qtyElement.innerText);
-
-      qtyElement.innerText =
-        current + cart[item];
-
-    }
-
-    if(product === "New Balance 530"){
-      nb530Total += cart[item];
-    }
-
+    html += `<div>${item} x${cart[item]}</div>`;
   }
 
-  if(total === 0){
-    cartItems.innerHTML = "Cart is empty";
-  }
+  document.getElementById("cart-items").innerHTML =
+    total ? html : "Cart is empty";
 
-  /* NB530 DISCOUNT */
-
-  const nb530Price =
-    document.getElementById("price-nb530");
-
-  if(nb530Total >= 3){
-
-    nb530Price.innerText = "$15";
-    nb530Price.style.color = "#7fd48d";
-
-  } else {
-
-    nb530Price.innerText = "$20";
-    nb530Price.style.color = "#8fb4d9";
-
-  }
-
-  document.getElementById("count").innerText =
-    total;
-
+  document.getElementById("count").innerText = total;
 }
 
-/* WHATSAPP */
-
-function checkoutWhatsApp(){
+/* CHECKOUT */
+function openCheckout(){
 
   if(Object.keys(cart).length === 0){
-    alert("Your cart is empty.");
+    alert("Cart empty");
     return;
   }
 
-  let message =
-    "Hello Kickgame,%0A%0AI want to order:%0A%0A";
+  let summary = "";
 
   for(let item in cart){
-
-    message +=
-      item + " x" + cart[item] + "%0A";
-
+    summary += item + " x" + cart[item] + "<br>";
   }
 
-  const phone =
-    "2637XXXXXXXX";
+  document.getElementById("orderSummary").innerHTML = summary;
+
+  document.getElementById("checkoutModal").style.display = "flex";
+}
+
+function closeCheckout(){
+  document.getElementById("checkoutModal").style.display = "none";
+}
+
+function placeOrder(){
+
+  const name = document.getElementById("custName").value;
+  const phone = document.getElementById("custPhone").value;
+  const address = document.getElementById("custAddress").value;
+
+  if(!name || !phone || !address){
+    alert("Fill all details");
+    return;
+  }
+
+  let msg =
+    "NEW ORDER%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Address: " + address + "%0A%0AItems:%0A";
+
+  for(let item in cart){
+    msg += item + " x" + cart[item] + "%0A";
+  }
 
   window.open(
-    "https://wa.me/" + phone + "?text=" + message,
+    "https://wa.me/2637XXXXXXXX?text=" + msg,
     "_blank"
   );
 
+  cart = {};
+  updateCart();
+  closeCheckout();
 }
 
 </script>
