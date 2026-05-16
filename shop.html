@@ -41,7 +41,9 @@ nav{
   border-bottom:1px solid #1b2633;
 }
 
-.logo{ height:40px; }
+.logo{
+  height:40px;
+}
 
 nav a{
   color:#cfd6dd;
@@ -49,12 +51,22 @@ nav a{
   margin-left:25px;
 }
 
-nav a:hover{ color:#8fb4d9; }
+nav a:hover{
+  color:#8fb4d9;
+}
 
 /* TITLE */
-.title{ padding:50px; }
-.title h1{ font-size:42px; }
-.title p{ color:#8c98a5; }
+.title{
+  padding:50px;
+}
+
+.title h1{
+  font-size:42px;
+}
+
+.title p{
+  color:#8c98a5;
+}
 
 /* GRID */
 .grid{
@@ -81,9 +93,14 @@ nav a:hover{ color:#8fb4d9; }
   padding:12px;
 }
 
-.info{ padding:16px; }
+.info{
+  padding:16px;
+}
 
-.price{ color:#8fb4d9; margin-bottom:10px; }
+.price{
+  color:#8fb4d9;
+  margin-bottom:10px;
+}
 
 .size-select{
   width:100%;
@@ -95,8 +112,10 @@ nav a:hover{ color:#8fb4d9; }
   border-radius:10px;
 }
 
-/* INPUT */
-.qty-row{ display:flex; gap:10px; }
+.qty-row{
+  display:flex;
+  gap:10px;
+}
 
 .quantity-input{
   width:75px;
@@ -144,7 +163,10 @@ nav a:hover{ color:#8fb4d9; }
   margin-bottom:15px;
 }
 
-.total{ color:#8fb4d9; margin-bottom:15px; }
+.total{
+  color:#8fb4d9;
+  margin-bottom:15px;
+}
 
 .checkout-btn{
   width:100%;
@@ -205,7 +227,7 @@ nav a:hover{ color:#8fb4d9; }
 <body>
 
 <nav>
-<img src="/logo.png" class="logo">
+<img src="./logo.png" class="logo">
 <div>
 <a href="index.html">Home</a>
 <a href="#">Shop</a>
@@ -219,7 +241,6 @@ nav a:hover{ color:#8fb4d9; }
 
 <div class="grid" id="grid"></div>
 
-<!-- CART -->
 <div class="cart">
 <h3>Cart</h3>
 <div class="cart-items" id="cart-items">Cart is empty</div>
@@ -227,7 +248,6 @@ nav a:hover{ color:#8fb4d9; }
 <button class="checkout-btn" onclick="openCheckout()">Checkout</button>
 </div>
 
-<!-- CHECKOUT -->
 <div class="overlay" id="checkout-overlay">
 <div class="checkout-box">
 
@@ -246,13 +266,13 @@ nav a:hover{ color:#8fb4d9; }
 <script>
 
 const products = [
-{name:"New Balance 9060",price:25,image:"/images/nb9060.jpg"},
-{name:"Adidas Samba",price:20,image:"/images/samba.jpg"},
-{name:"Puma Suede",price:25,image:"/images/puma_suede.jpg"},
-{name:"New Balance 530",price:20,image:"/images/nb530.jpg"},
-{name:"Nike TN",price:30,image:"/images/tn.jpg"},
-{name:"Asics",price:60,image:"/images/asics.jpg"},
-{name:"Nike Mind 001",price:60,image:"/images/nike_mind_001.jpg"}
+{name:"New Balance 9060",price:25,image:"./images/nb9060.jpg"},
+{name:"Adidas Samba",price:20,image:"./images/samba.jpg"},
+{name:"Puma Suede",price:25,image:"./images/puma_suede.jpg"},
+{name:"New Balance 530",price:20,image:"./images/nb530.jpg"},
+{name:"Nike TN",price:30,image:"./images/tn.jpg"},
+{name:"Asics",price:60,image:"./images/asics.jpg"},
+{name:"Nike Mind 001",price:60,image:"./images/nike_mind_001.jpg"}
 ];
 
 let cart = {};
@@ -262,7 +282,9 @@ const grid = document.getElementById("grid");
 products.forEach(p=>{
 grid.innerHTML += `
 <div class="card">
+
 <img src="${p.image}">
+
 <div class="info">
 
 <h3>${p.name}</h3>
@@ -292,7 +314,10 @@ function addToCart(name,price){
 const size = document.getElementById("size-"+name).value;
 const qty = parseInt(document.getElementById("qty-"+name).value);
 
-if(!size){ alert("Select size"); return; }
+if(!size){
+alert("Select size");
+return;
+}
 
 const key = name+" - "+size;
 
