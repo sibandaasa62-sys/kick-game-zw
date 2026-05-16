@@ -6,149 +6,108 @@
 <title>Kickgame</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
 }
 
-body {
-  background: #0b0f14;
-  color: #e6e6e6;
-  overflow-x: hidden;
+body{
+  background:#0b0f14;
+  color:#e6e6e6;
+  overflow-x:hidden;
 }
 
-/* subtle background texture */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top, #111827, #070a0f 60%, #05070a);
-  z-index: -1;
+/* BACKGROUND */
+
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:
+  radial-gradient(circle at top,#111827,#070a0f 60%,#05070a);
+  z-index:-1;
 }
 
 /* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background: rgba(10, 15, 20, 0.7);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #111;
-  position: sticky;
-  top: 0;
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background:rgba(10,15,20,0.7);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #111;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
-.logo {
-  height: 40px;
+.logo{
+  height:40px;
 }
 
-nav a {
-  color: #cfd6dd;
-  text-decoration: none;
-  margin-left: 25px;
-  font-size: 14px;
-  transition: 0.3s;
+nav a{
+  color:#cfd6dd;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:14px;
+  transition:0.3s;
 }
 
-nav a:hover {
-  color: #8fb4d9;
+nav a:hover{
+  color:#8fb4d9;
 }
 
 /* HERO */
-.hero {
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
+
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 20px;
 }
 
-.hero h1 {
-  font-size: 72px;
-  letter-spacing: 4px;
-  color: #dfe7ef;
+.hero h1{
+  font-size:72px;
+  letter-spacing:4px;
+  color:#dfe7ef;
 }
 
-.hero p {
-  margin-top: 18px;
-  color: #9aa7b3;
-  max-width: 600px;
-  font-size: 15px;
-  line-height: 1.6;
+.hero p{
+  margin-top:18px;
+  color:#9aa7b3;
+  font-size:16px;
+  letter-spacing:1px;
 }
 
-.btn {
-  margin-top: 30px;
-  padding: 12px 26px;
-  border: 1px solid #6f93b7;
-  background: transparent;
-  color: #cfe3ff;
-  cursor: pointer;
-  transition: 0.3s;
-  letter-spacing: 1px;
+/* BUTTON */
+
+.btn{
+  margin-top:30px;
+  padding:12px 28px;
+  border:1px solid #6f93b7;
+  background:transparent;
+  color:#cfe3ff;
+  cursor:pointer;
+  transition:0.3s;
+  border-radius:12px;
+  letter-spacing:1px;
 }
 
-.btn:hover {
-  background: #6f93b7;
-  color: #0b0f14;
-}
-
-/* SECTION */
-.section {
-  padding: 70px 50px;
-}
-
-.section h2 {
-  font-size: 22px;
-  margin-bottom: 25px;
-  color: #b7c7d6;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-}
-
-/* CARD */
-.card {
-  background: #111821;
-  border-radius: 14px;
-  overflow: hidden;
-  transition: 0.3s;
-  border: 1px solid #161f2a;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: #2a3b52;
-}
-
-.card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.card h3 {
-  padding: 10px 12px 5px;
-  font-size: 15px;
-  color: #e6e6e6;
-}
-
-.card p {
-  padding: 0 12px 14px;
-  color: #8aa4bf;
-  font-size: 14px;
+.btn:hover{
+  background:#6f93b7;
+  color:#0b0f14;
+  transform:translateY(-2px);
 }
 
 </style>
@@ -156,48 +115,36 @@ nav a:hover {
 
 <body>
 
+<!-- NAV -->
+
 <nav>
-  <img src="logo.png" class="logo">
-  <div>
-    <a href="#">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="#">Drops</a>
-    <a href="#">Contact</a>
-  </div>
+
+<img src="logo.png" class="logo">
+
+<div>
+<a href="#">Home</a>
+<a href="shop.html">Shop</a>
+<a href="#">Drops</a>
+<a href="#">Contact</a>
+</div>
+
 </nav>
 
+<!-- HERO -->
+
 <section class="hero">
-  <h1>KICKGAME</h1>
-  <p>Curated sneakers & streetwear. Clean drops. Minimal noise. Built for timeless style.</p>
-  <button class="btn" onclick="window.location.href='shop.html'">
-    Shop Collection
-  </button>
-</section>
 
-<section class="section">
-  <h2>Featured Sneakers</h2>
+<h1>KICKGAME</h1>
 
-  <div class="grid">
+<p>Nation Wide Delivery</p>
 
-    <div class="card">
-      <img src="images/af1.jpg">
-      <h3>Air Force 1</h3>
-      <p>$120</p>
-    </div>
+<button
+class="btn"
+onclick="window.location.href='shop.html'"
+>
+Shop Collection
+</button>
 
-    <div class="card">
-      <img src="images/jordan4.jpg">
-      <h3>Jordan 4</h3>
-      <p>$250</p>
-    </div>
-
-    <div class="card">
-      <img src="images/yeezy.jpg">
-      <h3>Yeezy Slides</h3>
-      <p>$90</p>
-    </div>
-
-  </div>
 </section>
 
 </body>
